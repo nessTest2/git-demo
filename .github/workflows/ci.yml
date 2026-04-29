@@ -1,0 +1,23 @@
+name: CI/CD pipeline
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses : actions/checkout@v4
+
+      - name: Python Setup
+        uses: action/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+
